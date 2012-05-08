@@ -1,0 +1,16 @@
+.gifhex(@hex) {
+    @s: ~`(function(s){s=s.substring(1,7); return (s.length<6)? s[0]+s[0]+s[1]+s[1]+s[2]+s[2] : s;})("@{hex}")`;
+    @func: ~`(function(s,i){return parseInt(s[0+2*i]+s[1+2*i],16);})`;
+    @r: ~`@{func}("@{s}", 0)`;
+    @g: ~`@{func}("@{s}", 1)`;
+    @b: ~`@{func}("@{s}", 2)`;
+    .gifrgb(@r, @g, @b);
+
+}
+.gifrgb(@r,@g,@b) {
+    @k: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+    @g1: "url(data:image/gif;base64,R0lGODlhAQABAPAAA";
+    @g2: "///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==)";
+    @b64img: ~`function(r,g,b){var k=@{k};return @{g1}+k.charAt(((0&3)<<4)|(r>>4))+k.charAt(((r&15)<<2)|(g>>6))+k.charAt(g&63)+k.charAt(b>>2)+k.charAt(((b&3)<<4)|(255>>4))+@{g2}}(@{r},@{g},@{b})`;
+    background-image: @b64img;
+}
