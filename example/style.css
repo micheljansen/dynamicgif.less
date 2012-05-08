@@ -1,0 +1,21 @@
+.progressitem {
+  width: 150px;
+  height: 30px;
+  background-color: #eee;
+  background-image: url(data:image/gif;base64,R0lGODlhAQABAPAAACF1m////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==);
+  border: 4px solid black;
+  background-position: -1px 0;
+  background-repeat: repeat-y;
+  background-size: 70%;
+  overflow: hidden;
+  margin: 40px;
+}
+.red {
+  background-image: url(data:image/gif;base64,R0lGODlhAQABAPAAAP8AAP///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==);
+}
+.green {
+  background-image: url(data:image/gif;base64,R0lGODlhAQABAPAAAAD/AP///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==);
+}
+.blue {
+  background-image: url(data:image/gif;base64,R0lGODlhAQABAPAAAAAA/////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==);
+}
